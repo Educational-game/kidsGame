@@ -29,12 +29,21 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
 }
 
 .img-wrapper {
     width: 65px;
     height: 65px;
+    transition: box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.img-wrapper:hover {
+    box-shadow: 0 0 10px 5px rgba(52, 152, 219, 0.7); 
+}
+
+.btn-margin {
+    margin-left: 10px;
 }
 
 .img-style {
@@ -45,7 +54,7 @@ body {
 
 .img-mountain-style {
     width: 83%;
-    height: 75%;
+    height: 80%;
 }
 
 .big-mountain {
