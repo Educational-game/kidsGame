@@ -1,0 +1,54 @@
+/* 设置页面元素的基本样式 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 设置根容器的样式 */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    height: 99vh;
+    margin: 0 auto; /* 居中对齐根容器 */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.img-wrapper {
+    width: 65px;
+    height: 65px;
+}
+
+.img-style {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.img-mountain-style {
+    width: 83%;
+    height: 75%;
+}
+
+.big-mountain {
+    display: flex;
+    align-items: flex-end;
+}
