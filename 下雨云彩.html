@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* 设置页面元素的基本样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* 设置根容器的样式 */
+        .container {
+            width: 100%;
+            max-width: 1200px; /* 设置根容器的最大宽度 */
+            margin: 0 auto; /* 居中对齐根容器 */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            /* display: flex;
+            flex-direction: row; */
+        }
+        
+        /* 设置标题的样式 */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        /* 设置图片容器的样式 */
+        .image-container {
+            width: 100%;
+            height: auto;
+
+            margin-bottom: 20px; 
+        }
+        
+       
+
+        /* 设置按钮的样式 */
+        .button-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .button-img{
+            padding: 10px;
+        }
+        .button-img-reset{
+            margin-left: auto;
+        }
+        
+        /* 设置鼠标悬停时图片的动画效果 */
+        .button-container img:hover {
+            transform: translateY(-10px);
+        }
+        
+        .cloud-image-container {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px; 
+        }
+
+        /* 设置图片的样式 */
+        .cloud_image {
+            display: block;
+            transform: translate(-280%, 0); /* 初始位置在容器外侧左侧 */
+            transition: transform 1s;
+        }
+        
+        /* 设置图片显示动画 */
+        .cloud_image.show {
+            transform: translate(210%);
+            transition: left 1s, transform 1.56s;
+        }
+        
+
+        /* 使用媒体查询来调整布局和样式 */
+        @media (max-width: 600px) {
+            /* 当屏幕宽度小于等于600px时的样式 */
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <img class="button-img" width=10% height=10% src="rain_icon.png" onclick="showRainImage()" alt="下雨按钮">
+            <img class="button-img" width=10% height=10% src="tree_icon.png" alt="植树按钮">
+            <img class="button-img" width=10% height=10% src="zoom_icon.png" alt="放大镜按钮">
+            <img class="button-img-reset" width=10% height=10% src="reset_icon.png" alt="重置按钮">
+        </div>
+
+        <div class="cloud-image-container">
+            <!-- <img width=15% height=15% src="cloud_icon.png" alt="图片" class="cloud_image"> -->
+            <img width=20% height=20% src="cloud_icon.png" alt="图片"  class="cloud_image">
+            
+        </div>
+
+        <div class="image-container"></div>
+          
+            <img width=85% height=85% src="yellow_mountain.png" alt="图片">
+        </div>
+    </div>
+
+    <script>
+        function showRainImage() {
+            
+            var image = document.querySelector('.cloud_image');
+            image.classList.add('show');
+        }
+    </script>
+</body>
+</html>
