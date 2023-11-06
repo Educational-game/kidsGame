@@ -17,8 +17,10 @@
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
-            /* display: flex;
-            flex-direction: row; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
         }
         
         /* 设置标题的样式 */
@@ -33,8 +35,13 @@
             height: auto;
 
             margin-bottom: 20px; 
+
         }
         
+        .img_mountain{
+            width: 75%;
+            height: 75%;
+        }
        
 
         /* 设置按钮的样式 */
@@ -52,25 +59,26 @@
             margin-left: auto;
         }
         
-        /* 设置鼠标悬停时图片的动画效果 */
+        /* 设置鼠标悬停时在按钮图片的动画效果 */
         .button-container img:hover {
             transform: translateY(-10px);
         }
         
+
         .cloud-image-container {
             width: 100%;
             height: auto;
             margin-bottom: 20px; 
         }
 
-        /* 设置图片的样式 */
+        /* 设置云彩图片的样式 */
         .cloud_image {
             display: block;
             transform: translate(-280%, 0); /* 初始位置在容器外侧左侧 */
             transition: transform 1s;
         }
         
-        /* 设置图片显示动画 */
+        /* 设置云彩图片显示动画 */
         .cloud_image.show {
             transform: translate(210%);
             transition: left 1s, transform 1.56s;
@@ -105,9 +113,9 @@
             
         </div>
 
-        <div class="image-container"></div>
+        <div class="image-container">
           
-            <img width=85% height=85% src="yellow_mountain.png" alt="图片">
+            <img class="img_mountain" src="yellow_mountain.png" alt="图片">
         </div>
     </div>
 
