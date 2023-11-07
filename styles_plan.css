@@ -1,0 +1,134 @@
+/* 设置页面元素的基本样式 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 设置根容器的样式 */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    height: 99vh;
+    margin: 0 auto; /* 居中对齐根容器 */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 1%;
+}
+
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.img-wrapper {
+    width: 65px;
+    height: 65px;
+    padding-left: 2%;
+}
+
+.img-style {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.img-wrapper img:hover {
+    transform: translateY(-10px);
+}
+.cloud{
+
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.img-cloud-style {
+    width: 12%;
+    transform: translate(-550%, 0); /* 初始位置在容器外侧左侧 */
+    transition: transform 1s;
+}
+.img-cloud-style.show {
+    transform: translate(0%);
+    transition: left 1s, transform 1.56s;
+}
+.img-cloud2-style {
+    width: 12%;
+    transform: translate(-500%, 0);
+    padding-left: 10%;
+}
+.img-cloud2-style.show {
+    transform: translate(0%);
+    transition: left 1s, transform 1.56s;
+}
+
+.raindrop_container {
+    width: 363px;
+    height: 570px;
+    position: absolute;
+    /* display: flex; */
+    top: 209px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.raindrop {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background: url('./images/raindrop_icon.png') no-repeat center center;
+    background-size: contain;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+.img-mountain-style {
+    width: 83%;
+    height: 75%;
+    transition: all 1s;
+}
+
+.big-mountain {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#tree-image {
+    position: fixed;
+    display: none;
+    width: 75px;
+    height: 75px;
+    background-image: url('./images/tree.png');
+    background-size: cover;
+    pointer-events: none; /* 禁用图片的鼠标事件，以便鼠标事件不被图片阻止 */
+}
+
+
+

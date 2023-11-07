@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儿童交互小游戏</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="buttons-container">
+            <div class="left-side">
+                <div class="img-wrapper"><img class="img-style" src="./images/rain_icon.png" onclick="showRainImage()" alt="下雨按钮"></div>
+                <div class="img-wrapper"><img class="img-style" id="btn_plan" src="./images/tree_icon.png" onclick="goToPlanPages()"alt="植树按钮"></div>
+                <div class="img-wrapper"><img class="img-style" src="./images/zoom_icon.png" alt="放大镜按钮"></div>
+            </div>
+            <div class="right-side">
+                <div class="img-wrapper"><img class="img-style" id="refreshButton" src="./images/reset_icon.png" alt="重置按钮"></div>
+            </div>
+        </div>
+        <div class = "cloud">
+            <!-- <img width=15% height=15% src="cloud_icon.png" alt="图片" class="cloud_image"> -->
+            <img class="img-cloud-style" src="./images/cloud_icon.png" alt="图片"  class="cloud_image">
+            
+            <!-- <img width=15% height=15% src="cloud_icon.png" alt="图片" class="cloud_image"> -->
+            <img class="img-cloud2-style" src="./images/cloud_icon.png" alt="图片"  class="cloud_image">
+            
+        </div>
+        <div class="raindrop_container">
+        </div>
+        <div class="big-mountain" id="mountain-id">
+            <img class="img-mountain-style" id="mountain-image-id" src="./images/yellow_mountain.png" alt="大山">
+        </div>
+    </div>
+
+    <script>
+        function showRainImage() {
+            document.getElementById('btn_plan').addEventListener('click', function() {
+                alert("现在正在下大雨，不能种树哦！");
+            // location.reload(); // 刷新页面
+        });
+            var image = document.querySelector('.img-cloud-style');
+            image.classList.add('show');
+            var image = document.querySelector('.img-cloud2-style');
+            image.classList.add('show');
+            setTimeout(function startRain() {
+                for (let i = 0; i < 50; i++) {
+                    createRaindrop();
+                }
+                raining = true;
+            }, 1000);
+ 
+
+            setTimeout(function changeAspectRatio() {
+                var image1 = document.querySelector('.img-mountain-style');
+                image1.src="./images/rain1_yellow_mountain.png"
+             },4000);
+             setTimeout(function changeAspectRatio() {
+                var image1 = document.querySelector('.img-mountain-style');
+                image1.src="./images/rain2_yellow_mountain.png"
+             }, 6000);
+            
+            
+
+            function createRaindrop() {
+                const raindrop = document.createElement('div');
+                raindrop.className = 'raindrop';
+                raindrop.style.left = Math.random() * 380 + 'px';
+                raindrop.style.animationDuration = Math.random() * 2 + 1.3 + 's';
+                document.querySelector('.raindrop_container').appendChild(raindrop);
+            }
+        }
+        document.getElementById('refreshButton').addEventListener('click', function() {
+            window.location.href = "./index.html";
+            // location.reload(); // 刷新页面
+        });
+        function goToPlanPages(){
+            window.location.href = "./plantrees.html";
+        };
+    </script>
+
+</body>
+</html>
