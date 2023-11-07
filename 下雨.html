@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            width: 400px;
+            height: 300px;
+            position: relative;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            background: url('./images/raindrop_icon.png') no-repeat center center;
+            background-size: contain;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <button id="startRainButton">开始下雨</button>
+
+    <script>
+        let raining = false;
+
+        document.getElementById('startRainButton').addEventListener('click', () => {
+            if (!raining) {
+                startRain();
+            }
+        });
+
+        function startRain() {
+            for (let i = 0; i < 50; i++) {
+                createRaindrop();
+            }
+            raining = true;
+        }
+
+        function createRaindrop() {
+            const raindrop = document.createElement('div');
+            raindrop.className = 'raindrop';
+            raindrop.style.left = Math.random() * 380 + 'px';
+            raindrop.style.animationDuration = Math.random() * 2 + 1 + 's';
+            document.querySelector('.container').appendChild(raindrop);
+        }
+    </script>
+</body>
+</html>
